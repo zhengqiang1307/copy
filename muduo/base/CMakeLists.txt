@@ -1,7 +1,7 @@
 #set(base_SRCS
 #    CurrentThread.cc
 #)
-file(GLOB base_SRCS "*.cc")
+file(GLOB base_SRCS "*.cpp")
 add_library(muduo_base ${base_SRCS})
 target_link_libraries(muduo_base pthread rt)
 set_target_properties(muduo_base PROPERTIES COMPILE_FLAGS "-std=c++0x")

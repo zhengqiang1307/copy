@@ -118,7 +118,7 @@ public:
   // see whether the calling thread holds the given capability.
   // The function is assumed to fail (no return) if the capability is not held
   void assertLocked() const ASSERT_CAPABILITY(this) {
-    assert(isLockedByThisThread);
+    assert(isLockedByThisThread());
   }
 
 private:

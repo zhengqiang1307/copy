@@ -5,12 +5,16 @@ set -x
 
 SOURCE_DIR=`pwd`
 BUILD_DIR=${BUILD_DIR:-../build}
+
 BUILD_TYPE=${BUILD_TYPE:-release}
 INSTALL_DIR=${INSTALL_DIR:-../${BUILD_TYPE}-install}
 CXX=${CXX:-g++}
 
 ln -sf $BUILD_DIR/$BUILD_TYPE/compile_commands.json
 
+          # CMAKE_BUILD_TYPE
+          # Specifies the build type on single-configuration generators.
+          # Possible values are empty, Debug, Release
 mkdir -p $BUILD_DIR/$BUILD_TYPE \
   && cd $BUILD_DIR/$BUILD_TYPE \
   && cmake \
@@ -25,3 +29,5 @@ mkdir -p $BUILD_DIR/$BUILD_TYPE \
 # CTEST_OUTPUT_ON_FAILURE=TRUE make test
 
 # cd $SOURCE_DIR && doxygen
+
+

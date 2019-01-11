@@ -18,13 +18,13 @@ namespace CurrentThread
     extern __thread int t_tidStringLength;
     extern __thread const char* t_threadName;
 
-//    void cacheTid();
+    void cacheTid();
 
     inline int tid()
     {
         if(!__builtin_expect(t_cachedTid, 0))
         {
-//            cacheTid();
+            cacheTid();
         }
         return t_cachedTid;
     }
@@ -44,9 +44,9 @@ namespace CurrentThread
         return t_threadName;
     }
 
-//    bool isMainThread();
+    bool isMainThread();
 
-//    void sleepUsec(int64_t usec);
+    void sleepUsec(int64_t usec);
 
     string stackTrace(bool demangle);
 

@@ -1,0 +1,6 @@
+add_executable(mutex_test Mutex_test.cpp)
+target_link_libraries(mutex_test muduo_base)
+
+add_executable(timestamp_unittest Timestamp_unittest.cpp)
+target_link_libraries(timestamp_unittest muduo_base)
+add_test(NAME timestamp_unittest COMMAND timestamp_unittest)

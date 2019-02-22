@@ -55,11 +55,11 @@ inline bool operator==(Timestamp lhs, Timestamp rhs) {
 
 inline double timeDifference(Timestamp high, Timestamp low) {
   int64_t diff = high.microSecondsSinceEpoch() - low.microSecondsSinceEpoch();
-  return (double)diff / Timestamp::KMicroSecondsPerSecond;
+  return static_cast<double>(diff / Timestamp::KMicroSecondsPerSecond);
 }
 
 inline Timestamp addTime(Timestamp timestamp, double seconds) {
-  int64_t microSeconds = seconds * Timestamp::KMicroSecondsPerSecond;
+  int64_t microSeconds = static_cast<int64_t>(seconds * Timestamp::KMicroSecondsPerSecond);
   return Timestamp(timestamp.microSecondsSinceEpoch() + microSeconds);
 }
 

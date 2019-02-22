@@ -25,7 +25,7 @@ public:
     pthread_cond_wait(&pcond_, mutex_.getPthreadMutex());
   }
 
-  void waitForSeconds(double seconds);
+  bool waitForSeconds(double seconds);
 
   void notify()
   {

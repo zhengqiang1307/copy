@@ -20,7 +20,7 @@ public:
     NUM_LOG_LEVELS,
   };
 
-  // compile time calculation fo basename of source file
+  // compile time calculation for basename of source file
   class SourceFile {
   public:
     template <int N>

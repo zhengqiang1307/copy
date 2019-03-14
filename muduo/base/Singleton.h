@@ -10,12 +10,12 @@ namespace muduo {
 
 namespace detail {
 
-template <typename T> struct has_no_destory {
+template <typename T> struct has_no_destroy {
   template <typename C> static char test(decltype(&C::no_destory));
 
   template <typename C> static int32_t test(...);
 
-  const static bool value = sizeof(test(0)) == 1;
+  const static bool value = sizeof(test<T>(0)) == 1;
 };
 
 } // namespace detail
@@ -33,7 +33,9 @@ public:
 
   static void init() {
     value_ = new T();
-    if (!detail::has_no_destory<T>::value) {
+
+    if (!detail::has_no_destroy<T>::value)
+    {
       ::atexit(destory);
     }
   }

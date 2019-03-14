@@ -19,6 +19,6 @@ private:
   int count_ GUARDED_BY(mutex_);
 };
 
-#endif // COUNTDOWNLATCH_H
 }
+#endif // COUNTDOWNLATCH_H
 

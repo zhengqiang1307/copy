@@ -39,25 +39,24 @@ public:
   void no_destory();
 };
 
-void threadFunc()
-{
-  printf("tid=%d, %p name=%s\n",
-         muduo::CurrentThread::tid(), &muduo::Singleton<Test>::instance(),
+void threadFunc() {
+  printf("tid=%d, %p name=%s\n", muduo::CurrentThread::tid(),
+         &muduo::Singleton<Test>::instance(),
          muduo::Singleton<Test>::instance().name().c_str());
+
   muduo::Singleton<Test>::instance().setName("only one, changed");
 }
 
-
-int main()
-{
+int main() {
   muduo::Singleton<Test>::instance().setName("only one");
-    muduo::Thread t1(threadFunc);
-    t1.start();
-    t1.join();
-    printf("tid=%d, %p name=%s\n",
-           muduo::CurrentThread::tid(),
-           &muduo::Singleton<Test>::instance(),
-           muduo::Singleton<Test>::instance().name().c_str());
-    muduo::Singleton<TestNoDestroy>::instance();
-    printf("with valgrind, you should see %zd-byte memory leak.\n", sizeof(TestNoDestroy));
+  muduo::Thread t1(threadFunc);
+  t1.start();
+  t1.join();
+  printf("tid=%d, %p name=%s\n", muduo::CurrentThread::tid(),
+         &muduo::Singleton<Test>::instance(),
+         muduo::Singleton<Test>::instance().name().c_str());
+
+  muduo::Singleton<TestNoDestroy>::instance();
+  printf("with valgrind, you should see %zd-byte memory leak.\n",
+         sizeof(TestNoDestroy));
 }

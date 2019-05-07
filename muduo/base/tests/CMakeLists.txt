@@ -17,3 +17,29 @@ add_test(NAME thread_test COMMAND thread_test)
 add_executable(Singleton_test Singleton_test.cpp)
 target_link_libraries(Singleton_test muduo_base)
 add_test(NAME Singleton_test COMMAND Singleton_test)
+
+#if(BOOSTTEST_LIBRARY)
+add_executable(LogStream_test LogStream_test.cpp)
+target_link_libraries(LogStream_test muduo_base boost_unit_test_framework)
+add_test(NAME LogStream_test COMMAND LogStream_test)
+#endif()
+
+add_executable(TimeZone_test TimeZone_test.cpp)
+target_link_libraries(TimeZone_test muduo_base)
+add_test(NAME TimeZone_test COMMAND TimeZone_testy)
+
+add_executable(Date_test Date_test.cpp)
+target_link_libraries(Date_test muduo_base)
+add_test(NAME Date_test COMMAND Date_test)
+
+add_executable(ThreadLocal_test ThreadLocal_test.cpp)
+target_link_libraries(ThreadLocal_test muduo_base)
+add_test(NAME ThreadLocal_test COMMAND ThreadLocal_test)
+
+add_executable(ThreadLocalSingleton_test ThreadLocalSingleton_test.cpp)
+target_link_libraries(ThreadLocalSingleton_test muduo_base)
+add_test(NAME ThreadLocalSingleton_test COMMAND ThreadLocalSingleton_test)
+
+add_executable(ThreadPool_test ThreadPool_test.cpp)
+target_link_libraries(ThreadPool_test muduo_base)
+add_test(NAME ThreadPool_test COMMAND ThreadPool_test)

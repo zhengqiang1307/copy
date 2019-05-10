@@ -128,6 +128,7 @@ inline LogStream &operator<<(LogStream &s, const Fmt &fmt) {
   s.append(fmt.data(), fmt.length());
   return s;
 }
+
 template Fmt::Fmt(const char *fmt, char val);
 template Fmt::Fmt(const char *fmt, unsigned short val);
 template Fmt::Fmt(const char *fmt, short val);

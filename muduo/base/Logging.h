@@ -3,7 +3,6 @@
 
 #include "muduo/base/LogStream.h"
 #include "muduo/base/Timestamp.h"
-//20190401 09:31:11.267298Z 22038WARN  Done - ThreadPool_test.cpp:36
 
 namespace muduo {
 

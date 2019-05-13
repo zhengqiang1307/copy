@@ -17,8 +17,8 @@ const int KLargeBuffer = 4000 * 1000;
 
 template <int SIZE> class FixedBuffer : noncopyable {
 public:
-  FixedBuffer() : cur_(data_) { setCookie(cookieStart()); }
-  ~FixedBuffer() { setCookie(cookieEnd()); }
+  FixedBuffer() : cur_(data_) { setCookie(cookieStart); }
+  ~FixedBuffer() { setCookie(cookieEnd); }
 
   int avail() const { return static_cast<int>(end() - cur_); }
   void append(const char *buf, size_t len) {
@@ -128,17 +128,8 @@ inline LogStream &operator<<(LogStream &s, const Fmt &fmt) {
   s.append(fmt.data(), fmt.length());
   return s;
 }
-template Fmt::Fmt(const char *fmt, char val);
-template Fmt::Fmt(const char *fmt, unsigned short val);
-template Fmt::Fmt(const char *fmt, short val);
-template Fmt::Fmt(const char *fmt, unsigned int val);
-template Fmt::Fmt(const char *fmt, int val);
-template Fmt::Fmt(const char *fmt, unsigned long val);
-template Fmt::Fmt(const char *fmt, long val);
-template Fmt::Fmt(const char *fmt, unsigned long long val);
-template Fmt::Fmt(const char *fmt, long long val);
-template Fmt::Fmt(const char *fmt, double val);
-template Fmt::Fmt(const char *fmt, float val);
+
+
 
 } // namespace muduo
 

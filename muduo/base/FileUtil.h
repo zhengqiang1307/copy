@@ -34,7 +34,7 @@ int readFile(StringArg filename, int maxSize, String *content,
              int64_t *filesize = nullptr, int64_t *modifyTime = nullptr,
              int64_t *createTime = nullptr) {
   ReadSmallFile file(filename);
-  file.readToString(maxSize, content, filesize, modifyTime, createTime);
+  return file.readToString(maxSize, content, filesize, modifyTime, createTime);
 }
 
 class AppendFile : noncopyable {

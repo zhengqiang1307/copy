@@ -97,6 +97,7 @@ Logger::Impl::Impl(LogLevel level, int savedErrno, const SourceFile &file,
   stream_ << T(CurrentThread::tidString(), CurrentThread::tidStringLength());
   stream_ << T(LogLevelName[level], 6);
   if (savedErrno != 0) {
+      // strerror_tl thread safe, and return the appropriate error description string
     stream_ << strerror_tl(savedErrno) << " (errno=" << savedErrno << ") ";
   }
 }

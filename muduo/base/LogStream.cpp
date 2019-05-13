@@ -67,7 +67,19 @@ template class FixedBuffer<KLargeBuffer>;
 
 template <int SIZE> const char *FixedBuffer<SIZE>::debugString() {
   *cur_ = '\0';
-  return data_;
+    return data_;
+}
+
+template<int SIZE>
+void FixedBuffer<SIZE>::cookieStart()
+{
+
+}
+
+template<int SIZE>
+void FixedBuffer<SIZE>::cookieEnd()
+{
+
 }
 
 template <typename T> void LogStream::formatInteger(T v) {
@@ -146,4 +158,15 @@ template <typename T> Fmt::Fmt(const char *fmt, T val) {
   assert(static_cast<size_t>(length_) < sizeof buf_);
 }
 
+template Fmt::Fmt(const char *fmt, char val);
+template Fmt::Fmt(const char *fmt, unsigned short val);
+template Fmt::Fmt(const char *fmt, short val);
+template Fmt::Fmt(const char *fmt, unsigned int val);
+template Fmt::Fmt(const char *fmt, int val);
+template Fmt::Fmt(const char *fmt, unsigned long val);
+template Fmt::Fmt(const char *fmt, long val);
+template Fmt::Fmt(const char *fmt, unsigned long long val);
+template Fmt::Fmt(const char *fmt, long long val);
+template Fmt::Fmt(const char *fmt, double val);
+template Fmt::Fmt(const char *fmt, float val);
 

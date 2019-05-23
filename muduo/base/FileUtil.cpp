@@ -25,6 +25,9 @@ FileUtil::ReadSmallFile::~ReadSmallFile() {
 int FileUtil::ReadSmallFile::readToBuffer(int *size) {
   int err = err_;
   if (fd_ > 0) {
+    // pread() reads up to count bytes from file descriptor fd at offset offset
+    // (from the start of the file) into the buffer starting at buf. The file
+    // offset is not changed.
     ssize_t n = ::pread(fd_, buf_, sizeof(buf_) - 1, 0);
     if (n >= 0) {
       if (size)
@@ -47,6 +50,7 @@ int FileUtil::ReadSmallFile::readToString(int maxSize, String *content,
 
   int err = err_;
 
+  // set filesize, modifyTime and createTime
   if (fd_ > 0) {
     content->clear();
     if (filesize) {
@@ -85,8 +89,8 @@ int FileUtil::ReadSmallFile::readToString(int maxSize, String *content,
 
 FileUtil::AppendFile::AppendFile(StringArg filename)
     : fp_(::fopen(filename.c_str(), "ae")), writtenBytes_(0) {
-  assert(fp_);
-  ::setbuffer(fp_, buffer_, sizeof(buffer_));
+  assert(fp_); // fp is a output stream
+  ::setbuffer(fp_, buffer_, sizeof(buffer_)); // set file buffer
 }
 
 FileUtil::AppendFile::~AppendFile() { ::fclose(fp_); }
@@ -113,6 +117,7 @@ void FileUtil::AppendFile::append(const char *logline, size_t len) {
 }
 
 void FileUtil::AppendFile::flush() { ::fflush(fp_); }
+//force a write of buffer_ for fp_ to physical disk
 
 size_t FileUtil::AppendFile::write(const char *logline, size_t len) {
   return ::fwrite_unlocked(logline, 1, len, fp_);

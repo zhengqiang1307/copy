@@ -21,7 +21,7 @@ public:
                    int64_t *modifyTime, int64_t *createTime);
   int readToBuffer(int *size);
   const char *buffer() const { return buf_; }
-  static const int kBufferSize = 64 * 1024;
+  static const int kBufferSize = 64 * 1024; // 64k
 
 private:
   int fd_;
@@ -48,7 +48,7 @@ public:
 private:
   size_t write(const char *logline, size_t len);
   FILE *fp_;
-  char buffer_[64 * 1024];
+  char buffer_[64 * 1024]; // 64k
   off_t writtenBytes_;
 };
 

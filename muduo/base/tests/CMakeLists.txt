@@ -43,3 +43,19 @@ add_test(NAME ThreadLocalSingleton_test COMMAND ThreadLocalSingleton_test)
 add_executable(ThreadPool_test ThreadPool_test.cpp)
 target_link_libraries(ThreadPool_test muduo_base)
 add_test(NAME ThreadPool_test COMMAND ThreadPool_test)
+
+add_executable(ProcessInfoTest ProcessInfoTest.cpp)
+target_link_libraries(ProcessInfoTest muduo_base)
+add_test(NAME ProcessInfoTest COMMAND ProcessInfoTest)
+
+add_executable(LogStreamBenchTest LogStreamBenchTest.cpp)
+target_link_libraries(LogStreamBenchTest muduo_base)
+add_test(NAME LogStreamBenchTest COMMAND LogStreamBenchTest)
+
+add_executable(LoggingTest LoggingTest.cpp)
+target_link_libraries(LoggingTest muduo_base)
+add_test(NAME LoggingTest COMMAND LoggingTest)
+
+add_executable(FileUtilTest FileUtilTest.cpp)
+target_link_libraries(FileUtilTest muduo_base)
+add_test(NAME FileUtilTest COMMAND FileUtilTest)

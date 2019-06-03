@@ -27,7 +27,7 @@ public:
     while (queue_.empty()) {
       notEmpty_.wait();
     }
-    assert(!notEmpty_.empty());
+    assert(!queue_.empty());
     T front(std::move(queue_.front()));
     queue_.pop_front();
     return std::move(front);

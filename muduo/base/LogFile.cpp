@@ -1,5 +1,5 @@
 #include "muduo/base/LogFile.h"
-#include "muduo/base/FileUtil.h"
+
 #include "muduo/base/ProcessInfo.h"
 
 #include <assert.h>
@@ -77,9 +77,9 @@ std::string LogFile::getLogFileName(const std::string &basename, time_t *now) {
 
   char timebuf[32];
   struct tm tm;
-  *now = time(NULL);
+  *now = time(nullptr);
   gmtime_r(now, &tm);
-  strftime(timebuf, sizeof timebuf, ".$Y%m%d-%H%M%S.", &tm);
+  strftime(timebuf, sizeof timebuf, ".%Y%m%d-%H%M%S.", &tm);
   filename += timebuf;
 
   filename += ProcessInfo::hostname();

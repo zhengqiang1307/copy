@@ -1,7 +1,7 @@
 #include "muduo/base/LogStream.h"
 
-#include <limits>
 #include <stdint.h>
+#include <limits>
 
 //#define BOOST_TEST_MODULE LogStreamTest
 #define BOOST_TEST_MAIN
@@ -10,8 +10,7 @@
 
 using muduo::string;
 
-BOOST_AUTO_TEST_CASE(testLogStreamBooleans)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamBooleans) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
   BOOST_CHECK_EQUAL(buf.toString(), string(""));
@@ -23,8 +22,7 @@ BOOST_AUTO_TEST_CASE(testLogStreamBooleans)
   BOOST_CHECK_EQUAL(buf.toString(), string("1\n0"));
 }
 
-BOOST_AUTO_TEST_CASE(testLogStreamIntegers)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamIntegers) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
   BOOST_CHECK_EQUAL(buf.toString(), string(""));
@@ -40,8 +38,7 @@ BOOST_AUTO_TEST_CASE(testLogStreamIntegers)
   BOOST_CHECK_EQUAL(buf.toString(), string("0 123x100"));
 }
 
-BOOST_AUTO_TEST_CASE(testLogStreamIntegerLimits)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamIntegerLimits) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
   os << -2147483647;
@@ -50,7 +47,8 @@ BOOST_AUTO_TEST_CASE(testLogStreamIntegerLimits)
   BOOST_CHECK_EQUAL(buf.toString(), string("-2147483647-2147483648"));
   os << ' ';
   os << 2147483647;
-  BOOST_CHECK_EQUAL(buf.toString(), string("-2147483647-2147483648 2147483647"));
+  BOOST_CHECK_EQUAL(buf.toString(),
+                    string("-2147483647-2147483648 2147483647"));
   os.resetBuffer();
 
   os << std::numeric_limits<int16_t>::min();
@@ -114,8 +112,7 @@ BOOST_AUTO_TEST_CASE(testLogStreamIntegerLimits)
   BOOST_CHECK_EQUAL(buf.toString(), string("000"));
 }
 
-BOOST_AUTO_TEST_CASE(testLogStreamFloats)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamFloats) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
 
@@ -154,11 +151,11 @@ BOOST_AUTO_TEST_CASE(testLogStreamFloats)
   BOOST_CHECK_EQUAL(buf.toString(), string("0.15"));
   os.resetBuffer();
 
-  os << a+b;
+  os << a + b;
   BOOST_CHECK_EQUAL(buf.toString(), string("0.15"));
   os.resetBuffer();
 
-  BOOST_CHECK(a+b != c);
+  BOOST_CHECK(a + b != c);
 
   os << 1.23456789;
   BOOST_CHECK_EQUAL(buf.toString(), string("1.23456789"));
@@ -173,8 +170,7 @@ BOOST_AUTO_TEST_CASE(testLogStreamFloats)
   os.resetBuffer();
 }
 
-BOOST_AUTO_TEST_CASE(testLogStreamVoid)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamVoid) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
 
@@ -187,8 +183,7 @@ BOOST_AUTO_TEST_CASE(testLogStreamVoid)
   os.resetBuffer();
 }
 
-BOOST_AUTO_TEST_CASE(testLogStreamStrings)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamStrings) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
 
@@ -200,8 +195,7 @@ BOOST_AUTO_TEST_CASE(testLogStreamStrings)
   BOOST_CHECK_EQUAL(buf.toString(), string("Hello Shuo Chen"));
 }
 
-BOOST_AUTO_TEST_CASE(testLogStreamFmts)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamFmts) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
 
@@ -218,18 +212,18 @@ BOOST_AUTO_TEST_CASE(testLogStreamFmts)
   os.resetBuffer();
 }
 
-BOOST_AUTO_TEST_CASE(testLogStreamLong)
-{
+BOOST_AUTO_TEST_CASE(testLogStreamLong) {
   muduo::LogStream os;
   const muduo::LogStream::Buffer& buf = os.buffer();
-  for (int i = 0; i < 399; ++i)
-  {
+  for (int i = 0; i < 399; ++i) {
     os << "123456789 ";
-    BOOST_CHECK_EQUAL(buf.length(), 10*(i+1));
-    BOOST_CHECK_EQUAL(buf.avail(), 4000 - 10*(i+1));
+    BOOST_CHECK_EQUAL(buf.length(), 10 * (i + 1));
+    BOOST_CHECK_EQUAL(buf.avail(), 4000 - 10 * (i + 1));
   }
 
   os << "abcdefghi ";
+  os << "abcdefghi ";
+  os << "123456789 ";
   BOOST_CHECK_EQUAL(buf.length(), 3990);
   BOOST_CHECK_EQUAL(buf.avail(), 10);
 

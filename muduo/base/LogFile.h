@@ -3,14 +3,15 @@
 
 #include "muduo/base/Mutex.h"
 #include "muduo/base/Types.h"
+#include "muduo/base/FileUtil.h"
 
 #include <memory>
 
 namespace muduo {
 
-namespace FileUtil {
-class AppendFile;
-}
+//namespace FileUtil {
+//class AppendFile;
+//}
 
 class LogFile : noncopyable {
 public:

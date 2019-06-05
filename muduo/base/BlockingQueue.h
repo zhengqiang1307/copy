@@ -14,12 +14,12 @@ public:
   BlockingQueue() : mutex_(), notEmpty_(mutex_), queue_() {}
   void put(const T &x) {
     MutexLockGuard lock(mutex_);
-    queue_.pop_back(x);
+    queue_.push_back(x);
     notEmpty_.notify();
   }
   void put(const T &&x) {
     MutexLockGuard lock(mutex_);
-    queue_.pop_back(std::move(x));
+    queue_.push_back(std::move(x));
     notEmpty_.notify();
   }
   T take() {

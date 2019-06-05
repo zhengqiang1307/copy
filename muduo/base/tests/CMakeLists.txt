@@ -59,3 +59,7 @@ add_test(NAME LoggingTest COMMAND LoggingTest)
 add_executable(FileUtilTest FileUtilTest.cpp)
 target_link_libraries(FileUtilTest muduo_base)
 add_test(NAME FileUtilTest COMMAND FileUtilTest)
+
+add_executable(BlockingQueueTest BlockingQueueTest.cpp)
+target_link_libraries(BlockingQueueTest muduo_base)
+add_test(NAME BlockingQueueTest COMMAND BlockingQueueTest)

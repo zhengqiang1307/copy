@@ -8,7 +8,10 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
 endif()
 
+#build example if muduo is the main project
+if(CMAKE_PROJECT_NAME STREQUAL "muduo")
 option(MUDUO_BUILD_EXAMPLES "Build Muduo examples" ON)
+endif()
 
 set(CXX_FLAGS
     "-g -DCHECK_PTHREAD_RETURN_VALUE -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Werror -Wconversion -Wno-unused-parameter -Wold-style-cast -Wpointer-arith -Wshadow -Wwrite-strings -march=native -std=c++11 -rdynamic"

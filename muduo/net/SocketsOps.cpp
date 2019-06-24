@@ -79,7 +79,7 @@ const sockaddr_in6 *sockets::sockaddr_in6_cast(const sockaddr *addr) {
       implicit_cast<const void *>(addr));
 }
 
-//#include <sys/socket.h>
+// #include <sys/socket.h>
 // int socket(int domain , int type , int protocol );
 // Returns file descriptor on success, or –1 on error
 
@@ -89,7 +89,7 @@ int sockets::createNonblockingOrDie(sa_family_t family) {
   return fd;
 }
 
-//#include <sys/socket.h>
+// #include <sys/socket.h>
 // int bind(int sockfd , const struct sockaddr * addr , socklen_t addrlen );
 // Returns 0 on success, or –1 on error
 
@@ -106,7 +106,7 @@ void sockets::bindOrDie(int socket, const sockaddr *addr) {
   if (ret < 0) LOG_SYSFATAL << "sockets::bindOrDie";
 }
 
-//#include <sys/socket.h>
+// #include <sys/socket.h>
 // int listen(int sockfd , int backlog );
 // Returns 0 on success, or –1 on error
 
@@ -115,7 +115,7 @@ void sockets::listenOrDie(int sockfd) {
   if (ret < 0) LOG_SYSFATAL << "sockets::listenOrDie";
 }
 
-//#include <sys/socket.h>
+// #include <sys/socket.h>
 // int accept(int sockfd , struct sockaddr * addr , socklen_t * addrlen );
 // Returns file descriptor on success, or –1 on error
 
@@ -155,7 +155,7 @@ int sockets::accept(int sockfd, sockaddr_in6 *addr) {
   return connfd;
 }
 
-//#include <sys/socket.h>
+// #include <sys/socket.h>
 // int connect(int sockfd , const struct sockaddr * addr , socklen_t addrlen );
 // Returns 0 on success, or –1 on error
 
@@ -182,14 +182,14 @@ ssize_t sockets::write(int sockfd, const void *buf, size_t count) {
   return ::write(sockfd, buf, count);
 }
 
-//#include <unistd.h>
+// #include <unistd.h>
 
 //       int close(int fd);
 void sockets::close(int sockfd) {
   if (::close(sockfd) < 0) LOG_SYSERR << "sockets::close";
 }
 
-//#include <sys/socket.h>
+// #include <sys/socket.h>
 
 // int shutdown(int socket, int how);
 // SHUT_RD
@@ -212,22 +212,22 @@ void sockets::toIpPort(char *buf, size_t size, const sockaddr *addr) {
   snprintf(buf + off, size - off, ":%u", port);
 }
 
-//#include <arpa/inet.h>
-// const char *inet_ntop(int af, const void *src,                      char
-//*dst, socklen_t size);
+// #include <arpa/inet.h>
+// const char *inet_ntop(int af, const void *src, char *dst, socklen_t size);
 void sockets::toIp(char *buf, size_t size, const sockaddr *addr) {
   if (addr->sa_family == AF_INET) {
     const sockaddr_in *addr_in4 = sockaddr_in_cast(addr);
     assert(size >= INET_ADDRSTRLEN);
-    ::inet_ntop(AF_INET, &(addr_in4->sin_addr), buf, static_cast<socklen_t>(size));
+    ::inet_ntop(AF_INET, &(addr_in4->sin_addr), buf,
+                static_cast<socklen_t>(size));
   } else if (addr->sa_family == AF_INET6) {
     const sockaddr_in6 *addr_in6 = sockaddr_in6_cast(addr);
     assert(size > INET6_ADDRSTRLEN);
-    ::inet_ntop(AF_INET6, &(addr_in6->sin6_addr), buf, static_cast<socklen_t>(size));
+    ::inet_ntop(AF_INET6, &(addr_in6->sin6_addr), buf,
+                static_cast<socklen_t>(size));
   }
 }
-//#include <arpa/inet.h>
-
+// #include <arpa/inet.h>
 // int inet_pton(int af, const char *src, void *dst);
 void sockets::fromIpPort(const char *ip, uint16_t port, sockaddr_in *addr) {
   addr->sin_family = AF_INET;
@@ -244,10 +244,58 @@ void sockets::fromIpPort(const char *ip, uint16_t port,
     LOG_SYSERR << "sockets::fromIpPort";
 }
 
-//int sockets::getSocketError(int sockfd) {}
+// #include <sys/socket.h>
+// int getsockopt(int socket, int level, int option_name,
+// void *restrict option_value, socklen_t *restrict option_len);
+// SO_ERROR
+//    Reports information about error status and clears it. This option shall
+//    store an int value.
+int sockets::getSocketError(int sockfd) {
+  int optionval;
+  socklen_t len = static_cast<socklen_t>(sizeof(optionval));
+  if (::getsockopt(sockfd, SOL_SOCKET, SO_ERROR, &optionval, &len) < 0) {
+    return errno;
+  } else {
+    return optionval;
+  }
+}
 
-//sockaddr_in6 sockets::getLocalAddr(int sockfd) {}
+// #include <sys/socket.h>
+// int getpeername(int socket, struct sockaddr *restrict address, socklen_t
+// *restrict address_len);
+sockaddr_in6 sockets::getPeerAddr(int sockfd) {
+  sockaddr_in6 peeraddr;
+  memZero(&peeraddr, sizeof(peeraddr));
+  socklen_t len = static_cast<socklen_t>(sizeof(peeraddr));
+  if (::getpeername(sockfd, sockaddr_cast(&peeraddr), &len) < 0) {
+    LOG_SYSERR << "sockets::getPeerAddr";
+  }
+  return peeraddr;
+}
 
-//sockaddr_in6 sockets::getPeerAddr(int sockfd) {}
+sockaddr_in6 sockets::getLocalAddr(int sockfd) {
+  sockaddr_in6 addr;
+  memZero(&addr, sizeof(addr));
+  socklen_t len = static_cast<socklen_t>(sizeof(addr));
+  if (::getsockname(sockfd, sockaddr_cast(&addr), &len) < 0) {
+    LOG_SYSERR << "sockets::getLocalAddr";
+  }
+  return addr;
+}
 
-//bool sockets::isSelfConnect(int sockfd) {}
+bool sockets::isSelfConnect(int sockfd) {
+  sockaddr_in6 localAddr = getLocalAddr(sockfd);
+  sockaddr_in6 peerAddr = getPeerAddr(sockfd);
+  if (localAddr.sin6_family == AF_INET) {
+    sockaddr_in *lAddr = reinterpret_cast<sockaddr_in *>(&localAddr);
+    sockaddr_in *pAddr = reinterpret_cast<sockaddr_in *>(&peerAddr);
+    return lAddr->sin_port == pAddr->sin_port &&
+           lAddr->sin_addr.s_addr == pAddr->sin_addr.s_addr;
+  } else if (localAddr.sin6_family == AF_INET6) {
+    return localAddr.sin6_port == peerAddr.sin6_port &&
+           memcmp(&localAddr.sin6_addr, &peerAddr.sin6_addr,
+                  sizeof(localAddr.sin6_addr)) == 0;
+  } else {
+    return false;
+  }
+}

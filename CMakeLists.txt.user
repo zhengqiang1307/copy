@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.8.2, 2019-06-05T18:30:54. -->
+<!-- Written by QtCreator 4.8.2, 2019-06-13T17:53:49. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -355,7 +355,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.1">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -411,7 +411,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.10">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -467,7 +467,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.11">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -523,7 +523,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.12">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -579,7 +579,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.13">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -635,7 +635,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.14">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -691,7 +691,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.15">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -747,7 +747,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.2">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -803,7 +803,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.3">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -859,7 +859,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.4">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -915,7 +915,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.5">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -971,7 +971,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.6">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -1027,7 +1027,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.7">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -1083,7 +1083,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.8">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -1139,7 +1139,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.9">
     <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
@@ -1195,7 +1195,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-f4oOAr/qtc-cmake-XX9CUDuJ/bin</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/tmp/QtCreator-0RSpCE/qtc-cmake-XXYzOImM/bin</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">16</value>
   </valuemap>

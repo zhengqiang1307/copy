@@ -3,7 +3,7 @@
 
 #include <boost/operators.hpp>
 #include <muduo/base/copyable.h>
-#include <stdint.h>
+#include "muduo/base/Types.h"
 #include <string>
 
 namespace muduo {

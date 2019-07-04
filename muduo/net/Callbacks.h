@@ -18,7 +18,7 @@ inline T* get_pointer(const std::shared_ptr<T>& ptr) {
 }
 
 template <typename T>
-inline T* get_pointer(const std::unique<T>& ptr) {
+inline T* get_pointer(const std::unique_ptr<T>& ptr) {
   return ptr.get();
 }
 
